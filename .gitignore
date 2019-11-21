@@ -1,0 +1,78 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.suo
+*.user
+*.trx
+*.cspkg
+*.azpkg
+Traces/
+bin/
+obj/
+packages/
+TestResults/
+sign.snk
+*.js
+*.js.map
+*.resources
+node_modules/
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+/.nuget/OSSREADME.TEMPLATE.txt
+
+
+# Jest coverage #
+/coverage
+
+# Localization Keys #
+/localization/resourceKeys.ts
+
+# Script Outputs #
+/src/scripts/outputs/
+webpack-profile.json
+
+/build
+
+# Manual Mocks #
+!/__mocks__/*.js
+!/src/app/repository/api/mockData.js
+
+# Artifacts generated at build time #
+src/localization/resourceKeys.ts
+webpack.prod.js
+webpack.common.js
+webpack.dev.js
+scripts/composeLocalizationKeys.js
+build/ServiceGroupRoot
+.vscode/settings.json

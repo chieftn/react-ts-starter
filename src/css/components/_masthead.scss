@@ -1,0 +1,14 @@
+.masthead {
+    height: 45px;
+    background-color:  #3c3c41;
+    display: -ms-grid;
+    display: grid;
+    width: 100vw;
+    .application-name {
+        margin-top: 10px;
+        margin-left: 5px;
+        font-size: 18px;
+        color: white;
+        font-weight: 600;
+    }
+}
