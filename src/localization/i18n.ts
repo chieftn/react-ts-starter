@@ -10,7 +10,7 @@ i18n
         interpolation: { escapeValue: false },  // React already does escaping
         lng: 'en',
         parseMissingKeyHandler: (key: string) => {
-            return `No translation found for "${key}"`;
+            return key;
         },
         resources
     });
