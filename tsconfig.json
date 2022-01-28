@@ -1,7 +1,25 @@
 {
-    "extends": "./tsconfig.build.json",
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "removeComments": true,
-        "sourceMap": false
-    }
+        "moduleResolution": "node",
+        "outDir": "./build/ServiceGroupRoot/dist",
+        "rootDir": "./src",
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+    },
+    "exclude": [
+        "./node_modules",
+        "./build",
+        "./scripts",
+        "./acceptance-tests",
+        "./webpack",
+        "./jest",
+        "./webpack.*",
+        "./**/*.spec.ts",
+        "./**/*.spec.tsx"
+    ],
+    "include": [
+        "./src/**/*"
+    ],
 }

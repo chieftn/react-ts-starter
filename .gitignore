@@ -62,17 +62,18 @@ Thumbs.db
 /src/scripts/outputs/
 webpack-profile.json
 
-/build
-
 # Manual Mocks #
+/dist
 !/__mocks__/*.js
 !/src/app/repository/api/mockData.js
 
 # Artifacts generated at build time #
 src/localization/resourceKeys.ts
-webpack.prod.js
-webpack.common.js
-webpack.dev.js
 scripts/composeLocalizationKeys.js
 build/ServiceGroupRoot
 .vscode/settings.json
+
+!webpack.common.js
+!webpack.dev.js
+!webpack.prod.js
+!.eslintrc.js
