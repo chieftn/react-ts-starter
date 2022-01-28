@@ -1,3 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`masthead matches snapshot 1`] = `Screen {}`;
+exports[`masthead matches snapshot 1`] = `
+<div
+  className="masthead"
+>
+  <div
+    className="application-name"
+  >
+    common.productName_undefined
+  </div>
+</div>
+`;
