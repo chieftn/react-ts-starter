@@ -1,8 +1,8 @@
-const config = require('./appconfig.ENV.json'); // tslint:disable-line: no-var-requires
+import data from './appconfig.dev.json';
 
 export interface AppConfigInterface {
     debug?: boolean;
 }
 
-const appConfig = config as AppConfigInterface;
+const appConfig = data as AppConfigInterface;
 export default appConfig;

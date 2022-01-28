@@ -6,8 +6,8 @@ module.exports = merge(common, {
     mode: 'production',
     plugins: [
         new webpack.NormalModuleReplacementPlugin(
-            /(.*)appconfig.ENV(\.*)/,
-            resource => resource.request = resource.request.replace(/ENV/, 'prod')
+            /(.*)appconfig.dev(\.*)/,
+            resource => resource.request = resource.request.replace(/dev/, 'prod')
         )
     ]
 });

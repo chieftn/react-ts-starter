@@ -43,11 +43,11 @@
   },
   "name": "react-ts-starter",
   "scripts": {
-    "build": "npm run compose-localization-keys && webpack --config webpack.prod.js",
+    "build": "npm run compose-localization-keys && webpack --config webpack.dev.js",
     "compose-localization-keys": "tsc ./scripts/composeLocalizationKeys.ts --skipLibCheck && node ./scripts/composeLocalizationKeys.js",
     "lint": "eslint --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
-    "start": "webpack serve --open --https --config webpack.dev.js",
+    "start": "webpack serve --open --https --config webpack.prod.js",
     "test": "npm run compose-localization-keys && jest"
   },
   "version": "0.0.1"

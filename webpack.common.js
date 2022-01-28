@@ -51,10 +51,6 @@ module.exports = {
         new htmlWebpackPlugin({
             template: './src/index.html'
         }),
-        new webpack.NormalModuleReplacementPlugin(
-            /(.*)appconfig.ENV(\.*)/,
-            resource => resource.request = resource.request.replace(/ENV/, 'test')
-        )
     ],
     optimization: {
         splitChunks: {
