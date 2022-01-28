@@ -26,8 +26,8 @@ const getLocalizationNodeString = (parentObject: object, prefix: string = '', in
 };
 
 try {
-    const localeFileLocation = './src/shared/localization/locales/en.json';
-    const keyDefinitionFile = './src/shared/localization/resourceKeys.ts';
+    const localeFileLocation = './src/localization/locales/en.json';
+    const keyDefinitionFile = './src/localization/resourceKeys.ts';
     const localeFileContents =  fs.readFileSync(localeFileLocation, 'utf-8');
     const localeFileObject = JSON.parse(localeFileContents);
 

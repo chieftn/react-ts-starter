@@ -1,101 +1,50 @@
 {
-    "dependencies": {
-        "@fluentui/react": "8.51.1",
-        "i18next": "21.6.10",
-        "react": "17.0.2",
-        "react-dom": "17.0.2",
-        "react-i18next": "11.15.3",
-        "react-router": "6.2.1",
-        "react-router-dom": "6.2.1"
-    },
-    "devDependencies": {
-        "@types/react": "17.0.37",
-        "@types/react-dom": "17.0.11",
-        "@types/react-router": "5.1.18",
-        "@typescript-eslint/eslint-plugin": "5.4.0",
-        "@typescript-eslint/parser": "5.4.0",
-        "clean-webpack-plugin": "4.0.0",
-        "copy-webpack-plugin": "10.0.0",
-        "css-loader": "6.5.1",
-        "eslint": "7.16.0",
-        "eslint-loader": "4.0.2",
-        "eslint-plugin-react": "7.27.1",
-        "html-webpack-plugin": "5.5.0",
-        "jest": "^27.4.7",
-        "node-sass": "6.0.1",
-        "sass-loader": "12.3.0",
-        "style-loader": "3.3.1",
-        "ts-loader": "9.2.6",
-        "typescript": "4.5.2",
-        "webpack": "5.64.4",
-        "webpack-cli": "4.9.1",
-        "webpack-dev-server": "^4.7.3"
-    },
-    "name": "react-ts-starter",
-    "scripts": {
-        "build": "npm run compose-localization-keys &&  webpack",
-        "compose-localization-keys": "tsc ./scripts/composeLocalizationKeys.ts --skipLibCheck && node ./scripts/composeLocalizationKeys.js",
-        "lint": "eslint --ext .ts,.tsx",
-        "lint:fix": "npm run lint -- --fix",
-        "start": "webpack serve --open --https",
-        "test": "npm run compose-localization-keys && jest --coverage"
-    },
-    "version": "0.0.1",
-    "jest": {
-        "collectCoverage": true,
-        "collectCoverageFrom": [
-            "src/**/*.{ts,tsx}",
-            "!src/index.ts",
-            "!src/shared/localization/resourceKeys.ts",
-            "!src/shared/localization/i18n.ts"
-        ],
-        "testEnvironment": "jsdom",
-        "coverageReporters": [
-            "html",
-            "cobertura"
-        ],
-        "setupFiles": [
-            "./jest.setup.ts"
-        ],
-        "transform": {
-            "^.+\\.(js|jsx|ts|tsx)$": "ts-jest"
-        },
-        "testRegex": "(\\.|/)(spec)\\.(tsx?)$",
-        "moduleNameMapper": {
-            "monaco-editor": "<rootDir>/node_modules/react-monaco-editor",
-            "^office-ui-fabric-react/lib": "<rootDir>/node_modules/office-ui-fabric-react/lib-commonjs",
-            ".+\\.(css|scss|png)$": "jest-transform-stub",
-            ".+\\appconfig.ENV.json": "<rootDir>/src/appconfig.dev.json"
-        },
-        "moduleFileExtensions": [
-            "js",
-            "json",
-            "jsx",
-            "ts",
-            "tsx"
-        ],
-        "reporters": [
-            "default",
-            [
-                "jest-trx-results-processor",
-                {
-                    "outputFile": "./jest-test-results.trx"
-                }
-            ]
-        ],
-        "snapshotSerializers": [
-            "enzyme-to-json/serializer"
-        ],
-        "testURL": "http://localhost?trustedAuthority=https://localhost",
-        "globals": {
-            "__DEV__": true,
-            "ts-jest": {
-                "tsConfig": "./tsconfig.jest.json",
-                "diagnostics": false,
-                "isolatedModules": true
-            }
-        },
-        "preset": "ts-jest/presets/js-with-ts",
-        "testMatch": null
-    }
+  "dependencies": {
+    "@fluentui/react": "8.51.1",
+    "i18next": "21.6.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-i18next": "11.15.3",
+    "react-router": "6.2.1",
+    "react-router-dom": "6.2.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.4.0",
+    "@types/react": "17.0.37",
+    "@types/react-dom": "17.0.11",
+    "@types/react-router": "5.1.18",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "10.0.0",
+    "css-loader": "6.5.1",
+    "eslint": "7.16.0",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-react": "7.27.1",
+    "html-webpack-plugin": "5.5.0",
+    "jest": "27.4.7",
+    "jest-transform-stub": "2.0.0",
+    "jest-trx-results-processor": "2.2.0",
+    "node-sass": "6.0.1",
+    "sass-loader": "12.3.0",
+    "style-loader": "3.3.1",
+    "ts-jest": "27.1.3",
+    "ts-loader": "9.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "4.5.2",
+    "webpack": "5.64.4",
+    "webpack-cli": "4.9.1",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "name": "react-ts-starter",
+  "scripts": {
+    "build": "npm run compose-localization-keys &&  webpack",
+    "compose-localization-keys": "tsc ./scripts/composeLocalizationKeys.ts --skipLibCheck && node ./scripts/composeLocalizationKeys.js",
+    "lint": "eslint --ext .ts,.tsx",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "webpack serve --open --https",
+    "test": "npm run compose-localization-keys && jest"
+  },
+  "version": "0.0.1"
 }
