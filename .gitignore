@@ -62,7 +62,7 @@ Thumbs.db
 /src/scripts/outputs/
 webpack-profile.json
 
-/build
+/dist
 
 # Manual Mocks #
 !/__mocks__/*.js
