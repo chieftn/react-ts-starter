@@ -75,4 +75,5 @@ build/ServiceGroupRoot
 .vscode/settings.json
 
 !webpack.config.js
-!eslintrc.js
+!webpack.dev.config.js
+!.eslintrc.js

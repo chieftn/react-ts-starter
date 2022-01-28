@@ -1,4 +1,4 @@
-const en = require('./locales/en.json'); // tslint:disable-line: no-var-requires
+const en = require('./locales/en.json'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 const resources = {
     en: { translation: en }
