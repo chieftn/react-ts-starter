@@ -7,7 +7,7 @@ exports[`masthead matches snapshot 1`] = `
   <div
     className="application-name"
   >
-    common.productName_undefined
+    "common.productName"
   </div>
 </div>
 `;
