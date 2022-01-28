@@ -7,7 +7,7 @@ import base from './webpack.prodBase';
 
 const config: webpack.Configuration = merge(base, {
     output: {
-        path: path.resolve(__dirname, './build/dist-prod')
+        path: path.resolve(__dirname, './build/dist')
     },
     plugins: [
         new webpack.NormalModuleReplacementPlugin(

@@ -10,8 +10,8 @@ const config: webpack.Configuration = {
     },
     output: {
         filename: '[name].[hash].js',
-        path: path.resolve(__dirname, './build/ServiceGroupRoot/dist'),
-        publicPath: '/',
+        path: path.resolve(__dirname, './build/dist'),
+        publicPath: '',
     },
 
     resolve: {
