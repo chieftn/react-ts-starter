@@ -42,7 +42,7 @@
   },
   "name": "react-ts-starter",
   "scripts": {
-    "build": "npm run compose-localization-keys &&  webpack",
+    "build": "npm run compose-localization-keys && webpack",
     "compose-localization-keys": "tsc ./scripts/composeLocalizationKeys.ts --skipLibCheck && node ./scripts/composeLocalizationKeys.js",
     "lint": "eslint --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
