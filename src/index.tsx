@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Application } from './application';
 import './localization/i18n';
@@ -11,6 +11,8 @@ const ViewHolder = () => (
     </BrowserRouter>
 );
 
-ReactDOM.render(
-    <ViewHolder/>, document.getElementById('reactTarget')
-);
+
+const container: HTMLElement | null  = document.getElementById('reactTarget');
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const root = createRoot(container!);
+root.render(<ViewHolder/>);
