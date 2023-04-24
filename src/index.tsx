@@ -2,13 +2,16 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Application } from './application';
+import { FluentProvider, teamsLightTheme } from '@fluentui/react-components';
 import './localization/i18n';
 import './css/main.scss'; // tslint:disable-line
 
 const ViewHolder = () => (
-    <BrowserRouter>
-        <Application/>
-    </BrowserRouter>
+    <FluentProvider theme={teamsLightTheme}>
+        <BrowserRouter>
+            <Application/>
+        </BrowserRouter>
+    </FluentProvider>
 );
 
 
