@@ -44,7 +44,7 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         compress: true,
-        port: 3000,
+        port: 3001,
     },
     plugins: [
         new CleanWebpackPlugin(),

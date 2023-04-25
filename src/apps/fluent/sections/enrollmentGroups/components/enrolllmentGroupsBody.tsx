@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { GroupEnrollmentsContextType, GroupEnrollmentsContext } from '../context';
+import { List } from './list';
+import { ListStatus } from './listStatus';
 
 export interface EnrollmentGroupsBodyProps {
     enrollmentGroups: GroupEnrollmentsContextType;
@@ -8,7 +10,8 @@ export interface EnrollmentGroupsBodyProps {
 export const EnrollmentGroupsBody: React.FC<EnrollmentGroupsBodyProps> = ({ enrollmentGroups }) => {
     return (
         <GroupEnrollmentsContext.Provider value={enrollmentGroups}>
-            <div>hello Body</div>
+            <List/>
+            <ListStatus/>
         </GroupEnrollmentsContext.Provider>
     );
 };
