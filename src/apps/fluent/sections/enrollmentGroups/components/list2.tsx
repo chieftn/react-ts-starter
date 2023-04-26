@@ -6,8 +6,6 @@ import {
     TableBody,
     TableRow,
     TableHeaderCell,
-    TableColumnDefinition,
-    createTableColumn,
     SortDirection,
     TableColumnId,
     TableCellLayout,
@@ -15,7 +13,7 @@ import {
     TableCell } from '@fluentui/react-components';
 import { EditFilled, EditRegular, bundleIcon } from '@fluentui/react-icons';
 import { useGroupEnrollmentsContext } from '../hooks/useEnrollmentGroupsContext';
-import { EnrollmentEntry } from '../state';
+// import { EnrollmentEntry } from '../state';
 // import { EnrollmentLink } from './enrollmentLink';
 
 export interface SortState {
@@ -29,33 +27,33 @@ export const List2: React.FC = () => {
     const [{ enrollmentEntries }] = useGroupEnrollmentsContext();
     // const [sortState, setSortState] = React.useState<SortState>({ sortColumn: 'id', sortDirection: 'ascending'});
     // const [selection, setSelection] = React.useState<Set<TableRowId>>(new Set([]));
-    const onClick = () => { alert('hi')};
+    // const onClick = () => { alert('hi')};
 
-    const columns: TableColumnDefinition<EnrollmentEntry>[] = React.useMemo(() => [
-        createTableColumn<EnrollmentEntry>({
-            columnId: 'id',
-            renderHeaderCell: () => 'Name',
+    // const columns: TableColumnDefinition<EnrollmentEntry>[] = React.useMemo(() => [
+    //     createTableColumn<EnrollmentEntry>({
+    //         columnId: 'id',
+    //         renderHeaderCell: () => 'Name',
 
-            renderCell: (item) =>
-                <TableCell>
-                    <TableCellLayout>
-                       {item.id}
-                    </TableCellLayout>
-                    <TableCellActions>
-                        <Button icon={<EditIcon />} onClick={onClick} appearance="subtle" />
+    //         renderCell: (item) =>
+    //             <TableCell>
+    //                 <TableCellLayout>
+    //                    {item.id}
+    //                 </TableCellLayout>
+    //                 <TableCellActions>
+    //                     <Button icon={<EditIcon />} onClick={onClick} appearance="subtle" />
 
-                    </TableCellActions>
-                </TableCell>
-        }),
-        createTableColumn<EnrollmentEntry>({
-            columnId: 'enabled',
-            renderHeaderCell: () => 'Enabled',
-            renderCell: () =>
-                <TableCell>
-                    <TableCellLayout><div>something</div></TableCellLayout>
-                </TableCell>
-        })
-    ], []);
+    //                 </TableCellActions>
+    //             </TableCell>
+    //     }),
+    //     createTableColumn<EnrollmentEntry>({
+    //         columnId: 'enabled',
+    //         renderHeaderCell: () => 'Enabled',
+    //         renderCell: () =>
+    //             <TableCell>
+    //                 <TableCellLayout><div>something</div></TableCellLayout>
+    //             </TableCell>
+    //     })
+    // ], []);
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     // const onSortChange: DataGridProps['onSortChange'] = (_, data) => {
@@ -74,18 +72,25 @@ export const List2: React.FC = () => {
         <Table aria-label="Table with cell actions">
           <TableHeader>
             <TableRow>
-              {columns.map((column) => (
-                <TableHeaderCell key={column.columnId}>
-                    Name
-                </TableHeaderCell>
-              ))}
+                {/* <TableSelectionCell
+                    checked={
+                    allRowsSelected ? true : someRowsSelected ? "mixed" : false
+                    }
+                    onClick={toggleAllRows}
+                    onKeyDown={toggleAllKeydown}
+                    checkboxIndicator={{ "aria-label": "Select all rows " }}
+                /> */}
+                <TableHeaderCell>File</TableHeaderCell>
+                <TableHeaderCell>Author</TableHeaderCell>
+                <TableHeaderCell>Last updated</TableHeaderCell>
+                <TableHeaderCell>Last update</TableHeaderCell>
             </TableRow>
           </TableHeader>
           <TableBody>
             {enrollmentEntries.map((item) => (
               <TableRow key={item.id}>
                 <TableCell>
-                  <TableCellLayout media={item.id}>
+                  <TableCellLayout>
                     {item.id}
                   </TableCellLayout>
                   <TableCellActions>

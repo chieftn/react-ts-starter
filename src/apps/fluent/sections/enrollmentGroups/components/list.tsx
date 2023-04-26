@@ -19,7 +19,7 @@ import {
 import { EditFilled, EditRegular, bundleIcon } from '@fluentui/react-icons';
 import { useGroupEnrollmentsContext } from '../hooks/useEnrollmentGroupsContext';
 import { EnrollmentEntry } from '../state';
-// import { EnrollmentLink } from './enrollmentLink';
+import { EnrollmentLink } from './enrollmentLink';
 
 export interface SortState {
     sortColumn: TableColumnId | undefined;
@@ -42,7 +42,7 @@ export const List: React.FC = () => {
             renderCell: (item) =>
                 <TableCell>
                     <TableCellLayout>
-                       {item.id}
+                       <EnrollmentLink id={item.id}/>
                     </TableCellLayout>
                     <TableCellActions>
                         <Button icon={<EditIcon />} onClick={onClick} appearance="subtle" />
@@ -86,7 +86,7 @@ export const List: React.FC = () => {
             resizableColumns={true}
             selectedItems={selection}
             onSelectionChange={onSelectionChange}
-            focusMode={'row_unstable'}
+                    focusMode={'none'}
         >
             <DataGridHeader>
                 <DataGridRow selectionCell={{ "aria-label": "Select all rows" }}>
