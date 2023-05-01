@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const common = require('./webpack.js');
 
 module.exports = merge(common, {
     mode: 'production',
@@ -9,9 +9,5 @@ module.exports = merge(common, {
             /(.*)appconfig.dev(\.*)/,
             resource => resource.request = resource.request.replace(/dev/, 'prod')
         ),
-        new webpack.NormalModuleReplacementPlugin(
-            /(.*)edge(\.*)/,
-            resource => resource.request = resource.request.replace(/cloud/, 'prod')
-        )
     ]
 });

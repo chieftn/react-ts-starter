@@ -3,71 +3,74 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-    entry: './src/index.tsx',
-    mode: 'development',
-    module: {
-        rules: [
-            {
-                test: /\.(ts|tsx)$/,
-                enforce: 'pre',
-                use: [
-                  {
-                    options: {
-                      eslintPath: require.resolve('eslint'),
+module.exports = (env) => {
+    console.log(env);
+    return {
+        entry: './src/index.tsx',
+        mode: 'development',
+        module: {
+            rules: [
+                {
+                    test: /\.(ts|tsx)$/,
+                    enforce: 'pre',
+                    use: [
+                    {
+                        options: {
+                        eslintPath: require.resolve('eslint'),
 
+                        },
+                        loader: require.resolve('eslint-loader'),
                     },
-                    loader: require.resolve('eslint-loader'),
-                  },
-                ],
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.(scss|css)$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
-            },
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            }
+                    ],
+                    exclude: /node_modules/,
+                },
+                {
+                    test: /\.(scss|css)$/,
+                    use: ["style-loader", "css-loader", "sass-loader"],
+                },
+                {
+                    test: /\.tsx?$/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/,
+                }
+            ],
+        },
+        resolve: {
+            extensions: [ '.tsx', '.ts', '.js' ],
+        },
+        output: {
+            filename: '[name].[contenthash].js',
+            path: path.resolve(__dirname, '.', 'dist'),
+            publicPath: '/'
+        },
+        devServer: {
+            historyApiFallback: true,
+            compress: true,
+            port: 3000,
+        },
+        plugins: [
+            new CleanWebpackPlugin(),
+            new htmlWebpackPlugin({
+                template: './src/index.html'
+            }),
         ],
-    },
-    resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ],
-    },
-    output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, '.', 'dist'),
-        publicPath: '/'
-    },
-    devServer: {
-        historyApiFallback: true,
-        compress: true,
-        port: 3000,
-    },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new htmlWebpackPlugin({
-            template: './src/index.html'
-        }),
-    ],
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name(module) {
-                        const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name(module) {
+                            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
 
-                        // npm package names are URL-safe, but some servers don't like @ symbols
-                        return `npm.${packageName.replace('@', '')}`;
+                            // npm package names are URL-safe, but some servers don't like @ symbols
+                            return `npm.${packageName.replace('@', '')}`;
+                        },
                     },
                 },
+                chunks: 'all',
+                maxInitialRequests: Infinity,
+                minSize: 100000,
             },
-            chunks: 'all',
-            maxInitialRequests: Infinity,
-            minSize: 100000,
-        },
+        }
     }
 };
