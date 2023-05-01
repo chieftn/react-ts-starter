@@ -72,7 +72,7 @@ module.exports = (env) => {
                 },
                 chunks: 'all',
                 maxInitialRequests: Infinity,
-                minSize: 100000,
+                minSize: 1000,
             },
         },
         plugins: [

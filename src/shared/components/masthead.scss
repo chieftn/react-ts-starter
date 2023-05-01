@@ -1,7 +1,8 @@
 .masthead {
     height: 45px;
     background-color: #3c3c41;
-    display: grid;
+    justify-content: space-between;
+    display: flex;
     width: 100vw;
     .application-name {
         margin-top: 10px;
@@ -9,5 +10,8 @@
         font-size: 18px;
         color: white;
         font-weight: 600;
+    }
+    .application-account {
+        color: white;
     }
 }

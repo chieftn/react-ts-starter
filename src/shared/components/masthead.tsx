@@ -10,9 +10,9 @@ export const Masthead: React.FC = () => {
     return (
         <div className="masthead">
             <div className="application-name">{t(ResourceKeys.common.productName)}</div>
-            <span style={{ marginLeft: 10, backgroundColor: 'white'}}>
+            <div className="application-account">
                 <Account/>
-            </span>
+            </div>
         </div>
     );
 };
