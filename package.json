@@ -2,6 +2,8 @@
   "dependencies": {
     "@fluentui/react-components": "^9.19.1",
     "@fluentui/react-icons": "2.0.200",
+    "@azure/msal-browser": "^2.33.0",
+    "@azure/msal-react": "^1.5.3",
     "i18next": "21.6.10",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -50,6 +52,7 @@
     "lint": "eslint --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "start": "webpack serve --open --https --config webpack.dev.js",
+    "start-edge": "webpack serve --open --https --config webpack.prod.js",
     "test": "npm run compose-localization-keys && jest"
   },
   "version": "0.0.1"
