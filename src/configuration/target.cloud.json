@@ -1,0 +1,4 @@
+{
+    "apiHostHeader": "cloud.target.local",
+    "authorizationMode": "msal"
+}

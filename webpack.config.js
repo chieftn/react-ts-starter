@@ -3,11 +3,26 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
+const TARGET = 'target';
+const TARGET_EDGE = 'edge';
+const TARGET_CLOUD = 'cloud';
+const MODE = 'mode';
+const MODE_DEVELOPMENT = 'development';
+const MODE_PRODUCTION = 'production';
+
 module.exports = (env) => {
-    console.log(env);
-    return {
+    const mode = env[MODE] ?? MODE_PRODUCTION;
+    const target = env[TARGET] ?? TARGET_CLOUD;
+
+    const configuration = {
+        devServer: {
+            historyApiFallback: true,
+            compress: true,
+            port: 3000,
+        },
+        devtool: mode === MODE_DEVELOPMENT ? 'inline-source-map' : undefined,
         entry: './src/index.tsx',
-        mode: 'development',
+        mode,
         module: {
             rules: [
                 {
@@ -35,25 +50,13 @@ module.exports = (env) => {
                 }
             ],
         },
-        resolve: {
-            extensions: [ '.tsx', '.ts', '.js' ],
-        },
         output: {
             filename: '[name].[contenthash].js',
             path: path.resolve(__dirname, '.', 'dist'),
             publicPath: '/'
         },
-        devServer: {
-            historyApiFallback: true,
-            compress: true,
-            port: 3000,
-        },
-        plugins: [
-            new CleanWebpackPlugin(),
-            new htmlWebpackPlugin({
-                template: './src/index.html'
-            }),
-        ],
+
+
         optimization: {
             splitChunks: {
                 cacheGroups: {
@@ -71,6 +74,29 @@ module.exports = (env) => {
                 maxInitialRequests: Infinity,
                 minSize: 100000,
             },
+        },
+        plugins: [
+            new CleanWebpackPlugin(),
+            new htmlWebpackPlugin({
+                template: './src/index.html'
+            }),
+            ...(mode === MODE_DEVELOPMENT) ? [
+                new webpack.NormalModuleReplacementPlugin(
+                    /(.*)mode.prod(\.*)/,
+                    resource => resource.request = resource.request.replace(/prod/, 'dev')
+                ),
+            ] : [],
+            ...(target === TARGET_EDGE) ? [
+                new webpack.NormalModuleReplacementPlugin(
+                    /(.*)target.cloud(\.*)/,
+                    resource => resource.request = resource.request.replace(/cloud/, 'edge')
+                ),
+            ] : [],
+        ],
+        resolve: {
+            extensions: [ '.tsx', '.ts', '.js' ],
         }
-    }
+    };
+
+    return configuration;
 };

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {  MsalProvider } from '@azure/msal-react';
 import { PublicClientApplication, EventType, AuthenticationResult } from '@azure/msal-browser';
-import { msalConfig } from '../authConfig';
+import { msalConfig } from '../../../configuration/authConfig';
+import { appConfig } from '../../../configuration/appconfig';
 
 export const msalInstance = new PublicClientApplication(msalConfig);
 
@@ -23,6 +24,8 @@ export interface AuthWrapperProps {
     children: React.ReactNode;
 }
 export const  AuthWrapper: React.FC<AuthWrapperProps> = ({ children }) => {
+    console.log(appConfig);
+
     return (
         <MsalProvider instance={msalInstance}>
             {children}

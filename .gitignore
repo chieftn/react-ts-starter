@@ -73,7 +73,5 @@ scripts/composeLocalizationKeys.js
 build/ServiceGroupRoot
 .vscode/settings.json
 
-!webpack.common.js
-!webpack.dev.js
-!webpack.prod.js
+!webpack.config.js
 !.eslintrc.js

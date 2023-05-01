@@ -42,16 +42,15 @@
     "typescript": "4.5.2",
     "webpack": "5.64.4",
     "webpack-cli": "4.9.1",
-    "webpack-dev-server": "^4.7.3",
-    "webpack-merge": "5.8.0"
+    "webpack-dev-server": "^4.7.3"
   },
   "name": "react-ts-starter",
   "scripts": {
-    "build": "npm run compose-localization-keys && webpack --config webpack.common.js  --env param1=cloud",
+    "build": "npm run compose-localization-keys && webpack --config webpack.config.js --env target=cloud mode=production",
     "compose-localization-keys": "tsc ./scripts/composeLocalizationKeys.ts --skipLibCheck && node ./scripts/composeLocalizationKeys.js",
     "lint": "eslint --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
-    "start": "webpack serve --open --http --config webpack.dev.js",
+    "start": "webpack serve --open --config webpack.config.js --env target=cloud mode=development",
     "test": "npm run compose-localization-keys && jest"
   },
   "version": "0.0.1"

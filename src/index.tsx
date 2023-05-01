@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Application } from './application';
 import { FluentProvider, teamsLightTheme } from '@fluentui/react-components';
-import { AuthWrapper } from './apps/account/edge/components/authWrapper';
+import { AuthWrapper } from './apps/account/components/authWrapper';
 import './localization/i18n';
 import './css/main.scss'; // tslint:disable-line
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useMsal, AuthenticatedTemplate, UnauthenticatedTemplate } from '@azure/msal-react';
 import { Link } from '@fluentui/react-components';
-import { loginRequest } from '../authConfig';
+import { loginRequest } from '../../../configuration/authConfig';
 
 export const Account: React.FC = () => {
     const { instance } = useMsal();

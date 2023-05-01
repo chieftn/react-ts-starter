@@ -1,8 +1,17 @@
-import data from './appconfig.dev.json';
+import modeData from './mode.prod.json';
+import targetData from './target.cloud.json';
 
-export interface AppConfigInterface {
+export interface ModeConfig {
     debug?: boolean;
 }
 
-const appConfig = data as AppConfigInterface;
-export default appConfig;
+export interface TargetConfig {
+    authorizationMode?: 'msal'
+    apiHostHeader?: string;
+}
+
+export type AppConfig = ModeConfig & TargetConfig;
+
+const modeConfig = modeData as ModeConfig;
+const targetConfig = targetData as TargetConfig;
+export const appConfig = {...modeConfig, ...targetConfig};
