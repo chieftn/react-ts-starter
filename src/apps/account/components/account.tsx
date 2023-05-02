@@ -23,16 +23,16 @@ export const Account: React.FC = () => {
     return (
         <div>
              <AuthenticatedTemplate>
-                    <div>
-                        <span>{activeAccount ? activeAccount.name : 'Unknown'}</span>
-                        <Link onClick={handleLogoutRedirect}>Logout</Link>
-                    </div>
-                </AuthenticatedTemplate>
-                <UnauthenticatedTemplate>
-                    <div>
-                        <Link onClick={handleLoginRedirect}>Login</Link>
-                    </div>
-                </UnauthenticatedTemplate>
+                <div>
+                    <span>{activeAccount ? activeAccount.name : 'Unknown'}</span>
+                    <Link onClick={handleLogoutRedirect}>Logout</Link>
+                </div>
+            </AuthenticatedTemplate>
+            <UnauthenticatedTemplate>
+                <div>
+                    <Link onClick={handleLoginRedirect}>Login</Link>
+                </div>
+            </UnauthenticatedTemplate>
         </div>
     );
 };
