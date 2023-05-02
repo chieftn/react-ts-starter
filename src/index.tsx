@@ -24,11 +24,13 @@ const router = createBrowserRouter([
   ]);
 
 const ViewHolder = () => (
-  <AccountWrapper>
-      <FluentProvider theme={teamsLightTheme}>
-        <RouterProvider router={router} />
-      </FluentProvider>
-  </AccountWrapper>
+  <React.StrictMode>
+    <AccountWrapper>
+        <FluentProvider theme={teamsLightTheme}>
+          <RouterProvider router={router} />
+        </FluentProvider>
+    </AccountWrapper>
+  </React.StrictMode>
 );
 
 const container: HTMLElement | null  = document.getElementById('reactTarget');

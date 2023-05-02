@@ -19,7 +19,9 @@ export const getRoutes = (): RouteObject => ({
         {
             path: ':id',
             element: <AuthenticationBoundary><SiteDetails/></AuthenticationBoundary>,
-            loader: () => ({ a: 'a', b: 'b'}),
+            loader: () => {
+                return { a: sessionStorage.getItem("key") }
+            },
             handle: {
                 crumb: (match: Match) => <span>id: {match.params.id}</span>
             }
