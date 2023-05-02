@@ -7,6 +7,7 @@ import { AccountWrapper } from './apps/account/components/accountWrapper';
 import { getRoutes as getSiteRoutes } from './apps/sites/views/siteRoutes';
 import './localization/i18n';
 import './css/main.scss'; // tslint:disable-line
+import { ErrorBoundary } from './shared/components/errorBoundary';
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       children: [
         getSiteRoutes()
       ],
+      errorElement: <ErrorBoundary/>
     },
   ]);
 

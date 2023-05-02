@@ -16,6 +16,10 @@ export const AuthenticationBoundary: React.FC<AuthenticationBoundaryProps> = ({ 
         return <>{children}</>;
     }
 
+    console.log('-----------------');
+    console.log(msal.inProgress);
+    console.log(isAuthenticated);
+    console.log('-----------------')
 
     if (msal.inProgress === InteractionStatus.None) {
         return (

@@ -4,7 +4,6 @@ import { PublicClientApplication, EventType, AuthenticationResult } from '@azure
 import { msalConfig } from '../../../configuration/authConfig';
 import { appConfig } from '../../../configuration/appconfig';
 
-
 const msalInstance = new PublicClientApplication(msalConfig);
 const accounts = msalInstance.getAllAccounts();
 if (accounts.length > 0) {

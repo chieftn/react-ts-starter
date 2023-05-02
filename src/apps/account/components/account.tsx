@@ -6,7 +6,7 @@ import { appConfig } from '../../../configuration/appconfig';
 
 export const Account: React.FC = () => {
     if (appConfig.authorizationMode !== 'msal') {
-        return <></>;
+        return <>not in msal mode</>;
     }
 
     const { instance } = useMsal();

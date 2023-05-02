@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { RouteObject, useMatches } from 'react-router-dom';
+import { AuthenticationBoundary } from '../../account/components/authenticationBoundary';
 import { SiteCreate } from './siteCreate';
 import { SiteDetails } from './siteDetails';
 import { SiteList } from './siteList';
@@ -13,20 +14,21 @@ export const getRoutes = (): RouteObject => ({
     children: [
         {
             index: true,
-            element: <SiteList/>
+            element: <AuthenticationBoundary><SiteList/></AuthenticationBoundary>
         },
         {
             path: ':id',
-            element: <SiteDetails/>,
+            element: <AuthenticationBoundary><SiteDetails/></AuthenticationBoundary>,
+            loader: () => ({ a: 'a', b: 'b'}),
             handle: {
                 crumb: (match: Match) => <span>id: {match.params.id}</span>
             }
         },
         {
             path: 'add',
-            element: <SiteCreate/>,
+            element: <AuthenticationBoundary><SiteCreate/></AuthenticationBoundary>,
             handle: {
-                crumb: () => <span>site me</span>
+                crumb: () => <span>site add</span>
             }
         }
     ]
