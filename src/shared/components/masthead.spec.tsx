@@ -6,5 +6,7 @@ describe('masthead', () => {
     it('matches snapshot', () => {
         const renderer = createShallowRenderer();
         renderer.render(<Masthead />);
+
+        expect(renderer.getRenderOutput()).toMatchSnapshot();
     });
 });
