@@ -1,7 +1,6 @@
-import { getMockT } from './src/shared/utils/testUtils';
-
 jest.mock('react-i18next', () => ({
+    // Trans: ({ children }) => (Array.isArray(children) ? renderNodes(children) : renderNodes([children])),
     useTranslation: () => ({
-      t: getMockT()
-    })
+        t: (key, ...params) => `${key}_${JSON.stringify(params)}`,
+    }),
 }));

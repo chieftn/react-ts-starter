@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const Masthead: React.FC = () => {
-    const { t } = useTranslation(['common']);
+    const { t } = useTranslation();
 
     return (
         <div className='masthead'>
