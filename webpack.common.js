@@ -11,22 +11,22 @@ module.exports = {
         rules: [
             {
                 test: /\.(scss|css)$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
-            }
+            },
         ],
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ],
+        extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, '.', 'dist'),
-        publicPath: '/'
+        publicPath: '/',
     },
     devServer: {
         historyApiFallback: true,
@@ -35,9 +35,9 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new ESLintPlugin(),
+        new ESLintPlugin({ context: './src', files: '**/*.ts*' }),
         new htmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
         }),
     ],
     optimization: {
@@ -57,5 +57,5 @@ module.exports = {
             maxInitialRequests: Infinity,
             minSize: 100000,
         },
-    }
+    },
 };

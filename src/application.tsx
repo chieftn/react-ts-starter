@@ -4,6 +4,7 @@ import { Masthead } from './shared/components/masthead';
 import { HomeView } from './apps/home/components/homeView';
 
 export const Application: React.FC = () => {
+    console.log('here we are');
     return (
         <div>
             <div>
@@ -11,7 +12,7 @@ export const Application: React.FC = () => {
             </div>
             <div>
                 <Routes>
-                    <Route path={`/`} element={<HomeView/>} />
+                    <Route path={`/`} element={<HomeView />} />
                 </Routes>
             </div>
         </div>
