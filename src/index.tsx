@@ -5,9 +5,11 @@ import { Application } from './application';
 import './localization/i18n';
 
 const ViewHolder = () => (
-    <BrowserRouter>
-        <Application />
-    </BrowserRouter>
+    <React.StrictMode>
+        <BrowserRouter>
+            <Application />
+        </BrowserRouter>
+    </React.StrictMode>
 );
 
 const container: HTMLElement | null = document.getElementById('reactTarget');

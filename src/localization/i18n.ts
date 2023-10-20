@@ -19,11 +19,7 @@ void i18n.use(initReactI18next).init({
     parseMissingKeyHandler: (key: string) => {
         return key;
     },
-    resources: {
-        en: {
-            common,
-        },
-    },
+    resources,
 });
 
 export default i18n;
