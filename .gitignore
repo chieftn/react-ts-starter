@@ -71,7 +71,6 @@ webpack-profile.json
 src/localization/resourceKeys.ts
 scripts/composeLocalizationKeys.js
 build/ServiceGroupRoot
-.vscode/settings.json
 
 !webpack.common.js
 !webpack.dev.js
