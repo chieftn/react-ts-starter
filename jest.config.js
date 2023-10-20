@@ -4,24 +4,19 @@ const { defaults } = require('jest-config');
 const config = {
     clearMocks: true,
     collectCoverage: true,
+    coverageDirectory: 'coverage',
     collectCoverageFrom: [
-        'src/**/*.{ts,tsx}',
+        './src/**',
         '!src/index.tsx',
-        '!src/localization/i18n.ts',
+        '!src/localization/**/*',
         '!src/shared/constants.ts',
         '!src/configuration/**/*',
     ],
-    coverageDirectory: 'coverage',
-    coverageProvider: 'v8',
-    moduleNameMapper: {
-        '\\.(css|scss|less)$': 'identity-obj-proxy',
-    },
+    coverageReporters: ['json', 'lcov', 'text', 'clover', 'cobertura'],
+    coveragePathIgnorePatterns: ['.spec.tsx', '.json', '.spec.ts', '.snap'],
     preset: 'ts-jest/presets/js-with-ts',
     setupFiles: ['./jest.setup.js'],
     testEnvironment: 'jsdom',
-    transform: {
-        '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
-    },
 };
 
 module.exports = config;
