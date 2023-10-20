@@ -7,12 +7,11 @@ import './css/main.scss'; // tslint:disable-line
 
 const ViewHolder = () => (
     <BrowserRouter>
-        <Application/>
+        <Application />
     </BrowserRouter>
 );
 
-
-const container: HTMLElement | null  = document.getElementById('reactTarget');
+const container: HTMLElement | null = document.getElementById('reactTarget');
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const root = createRoot(container!);
-root.render(<ViewHolder/>);
+root.render(<ViewHolder />);

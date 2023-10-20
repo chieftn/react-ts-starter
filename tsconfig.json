@@ -5,7 +5,7 @@
         "moduleResolution": "node",
         "outDir": "./build/ServiceGroupRoot/dist",
         "rootDir": "./src",
-        "strictNullChecks": true,
+        "strictNullChecks": true
     },
     "exclude": [
         "./node_modules",
@@ -18,7 +18,5 @@
         "./**/*.spec.ts",
         "./**/*.spec.tsx"
     ],
-    "include": [
-        "./src/**/*"
-    ],
+    "include": ["./src/**/*", "src/localization/i18next.d.ts"]
 }

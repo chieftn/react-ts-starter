@@ -6,10 +6,7 @@
         "experimentalDecorators": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "react",
-        "lib": [
-          "dom",
-          "es6"
-        ],
+        "lib": ["dom", "es6"],
         "module": "esnext",
         "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true,
@@ -20,6 +17,7 @@
         "sourceMap": true,
         "target": "ES5",
         "resolveJsonModule": true,
+        "strict": true,
         "esModuleInterop": true
     }
 }

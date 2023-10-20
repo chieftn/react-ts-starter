@@ -34,7 +34,7 @@ module.exports = {
         tsconfigRootDir: __dirname,
         sourceType: 'module',
     },
-    plugins: ['@typescript-eslint', 'react-hooks', 'etc', 'react', 'eslint-plugin-unicorn'],
+    plugins: ['@typescript-eslint', 'react-hooks', 'etc', 'import', 'react', 'eslint-plugin-unicorn'],
     extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
     rules: {
         '@typescript-eslint/array-type': [
@@ -131,14 +131,6 @@ module.exports = {
         'no-new-wrappers': 'error',
         'no-param-reassign': 'error',
         'no-redeclare': 'error',
-        'no-restricted-imports': [
-            'error',
-            {
-                name: 'react-i18next',
-                importNames: ['useTranslation'],
-                message: 'Use next-i18next/useTranslation instead.',
-            },
-        ],
         'no-return-await': 'error',
         'no-sequences': 'error',
         'no-shadow': 'off',

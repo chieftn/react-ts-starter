@@ -4,7 +4,6 @@ import { Masthead } from './shared/components/masthead';
 import { HomeView } from './apps/home/components/homeView';
 
 export const Application: React.FC = () => {
-    console.log('here we are');
     return (
         <div>
             <div>
