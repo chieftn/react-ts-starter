@@ -6,7 +6,6 @@
         "outDir": "./build/ServiceGroupRoot/dist",
         "rootDir": "./src",
         "strictNullChecks": true,
-        "suppressImplicitAnyIndexErrors": true,
     },
     "exclude": [
         "./node_modules",

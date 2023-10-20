@@ -2,26 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
     mode: 'development',
     module: {
         rules: [
-            {
-                test: /\.(ts|tsx)$/,
-                enforce: 'pre',
-                use: [
-                  {
-                    options: {
-                      eslintPath: require.resolve('eslint'),
-
-                    },
-                    loader: require.resolve('eslint-loader'),
-                  },
-                ],
-                exclude: /node_modules/,
-            },
             {
                 test: /\.(scss|css)$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
@@ -48,6 +35,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new ESLintPlugin(),
         new htmlWebpackPlugin({
             template: './src/index.html'
         }),
