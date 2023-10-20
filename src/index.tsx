@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Application } from './application';
 import './localization/i18n';
-import './css/main.scss'; // tslint:disable-line
 
 const ViewHolder = () => (
     <BrowserRouter>
