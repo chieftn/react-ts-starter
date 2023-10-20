@@ -1,22 +1,28 @@
 {
-    "extends": "./tsconfig.base.json",
     "compilerOptions": {
-        "removeComments": true,
+        "allowJs": true,
+        "allowUnreachableCode": false,
+        "baseUrl": "./",
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react",
+        "lib": ["dom", "es6"],
+        "module": "esnext",
         "moduleResolution": "node",
-        "outDir": "./build/ServiceGroupRoot/dist",
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "resolveJsonModule": true,
+        "removeComments": true,
         "rootDir": "./src",
-        "strictNullChecks": true
+        "sourceMap": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "target": "ES5"
     },
-    "exclude": [
-        "./node_modules",
-        "./build",
-        "./scripts",
-        "./acceptance-tests",
-        "./webpack",
-        "./jest",
-        "./webpack.*",
-        "./**/*.spec.ts",
-        "./**/*.spec.tsx"
-    ],
-    "include": ["./src/**/*", "src/localization/i18next.d.ts"]
+    "exclude": ["./node_modules", "./build", "./acceptance-tests", "./webpack.*"],
+    "include": ["./src/**/*"]
 }

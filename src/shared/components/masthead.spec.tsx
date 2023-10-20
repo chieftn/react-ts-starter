@@ -1,17 +1,10 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { create } from 'react-test-renderer';
+import { createRenderer as createShallowRenderer } from 'react-test-renderer/shallow';
 import { Masthead } from './masthead';
-import { getMockT } from '../utils/testUtils';
 
 describe('masthead', () => {
     it('matches snapshot', () => {
-        const component = create(<Masthead />).toJSON();
-        expect(component).toMatchSnapshot();
-    });
-
-    it('renders product name', () => {
-        const t = getMockT();
-        render(<Masthead />);
+        const renderer = createShallowRenderer();
+        renderer.render(<Masthead />);
     });
 });

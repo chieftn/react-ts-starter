@@ -1,5 +1,5 @@
 import type common from './locales/en/common.json';
-import type { defaultNS } from '../localization/i18n';
+import type { defaultNS } from './i18n';
 
 export interface Resources {
     common: typeof common;
