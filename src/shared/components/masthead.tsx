@@ -2,7 +2,10 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const Masthead: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation('common');
+
+    // eslint-disable-next-line no-console
+    console.log(i18n);
 
     return (
         <div className='masthead'>

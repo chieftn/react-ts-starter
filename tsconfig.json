@@ -16,7 +16,6 @@
         "noImplicitThis": true,
         "noUnusedLocals": true,
         "resolveJsonModule": true,
-        "removeComments": true,
         "rootDir": "./src",
         "sourceMap": true,
         "strict": true,
