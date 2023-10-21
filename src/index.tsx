@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { Application } from './application';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/router';
 import './localization/i18n';
 
 const ViewHolder = () => (
     <React.StrictMode>
-        <BrowserRouter>
-            <Application />
-        </BrowserRouter>
+        <RouterProvider router={router} />
     </React.StrictMode>
 );
 
