@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -9,37 +10,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(ts|tsx)$/,
-                enforce: 'pre',
-                use: [
-                  {
-                    options: {
-                      eslintPath: require.resolve('eslint'),
-
-                    },
-                    loader: require.resolve('eslint-loader'),
-                  },
-                ],
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.(scss|css)$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
-            },
-            {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
-            }
+            },
         ],
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ],
+        extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, '.', 'dist'),
-        publicPath: '/'
+        publicPath: '/',
     },
     devServer: {
         historyApiFallback: true,
@@ -48,8 +31,9 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new ESLintPlugin({ context: './src', files: '**/*.ts*' }),
         new htmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
         }),
     ],
     optimization: {
@@ -69,5 +53,5 @@ module.exports = {
             maxInitialRequests: Infinity,
             minSize: 100000,
         },
-    }
+    },
 };

@@ -71,9 +71,10 @@ webpack-profile.json
 src/localization/resourceKeys.ts
 scripts/composeLocalizationKeys.js
 build/ServiceGroupRoot
-.vscode/settings.json
 
 !webpack.common.js
 !webpack.dev.js
 !webpack.prod.js
 !.eslintrc.js
+!jest.config.js
+!jest.setup.js
